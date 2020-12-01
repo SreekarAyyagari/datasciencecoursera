@@ -1,24 +1,67 @@
-# datasciencecoursera
-Getting-and-Cleaning-Data-Week-4-Assignment:
-This repo was created to finish the assignment for week 4 of Getting and Cleaning Data Coursera course.
+Exploratory-Data-Analysis-Week-1-Project:
+Dataset: Electric power consumption [20Mb]
+Description: Measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and some sub-metering values are available.
+The following descriptions of the 9 variables in the dataset are taken from the UCI web site:
 
-First, download and unzip the data file into your R working directory.
-Second, download the R source code into your R working directory.
-Finally, execute R source code to generate tidy data file.
-Data description
-The variables in the data X are sensor signals measured with waist-mounted smartphone from 30 subjects. The variable in the data Y indicates activity type the subjects performed during recording.
+Date: Date in format dd/mm/yyyy
+Time: time in format hh:mm:ss
+Global_active_power: household global minute-averaged active power (in kilowatt)
+Global_reactive_power: household global minute-averaged reactive power (in kilowatt)
+Voltage: minute-averaged voltage (in volt)
+Global_intensity: household global minute-averaged current intensity (in ampere)
+Sub_metering_1: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
+Sub_metering_2: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
+Sub_metering_3: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
+Review criteria
+less 
+Criteria
 
-Code explaination
-The code combined training dataset and test dataset, and extracted partial variables to create another dataset with the averages of each variable for each activity.
+Was a valid GitHub URL containing a git repository submitted?
+Does the GitHub repository contain at least one commit beyond the original fork?
+Please examine the plot files in the GitHub repository. Do the plot files appear to be of the correct graphics file format?
+Does each plot appear correct?
+Does each set of R code appear to create the reference plot?
+Reviewing the Assignments
 
-New dataset
-The new generated dataset contained variables calculated based on the mean and standard deviation. Each row of the dataset is an average of each activity type for all subjects.
+Keep in mind this course is about exploratory graphs, understanding the data, and developing strategies. Here's a good quote from a swirl lesson about exploratory graphs: "They help us find patterns in data and understand its properties. They suggest modeling strategies and help to debug analyses. We DON'T use exploratory graphs to communicate results."
 
-The code was written based on the instruction of this assignment
-Read training and test dataset into R environment. Read variable names into R envrionment. Read subject index into R environment.
+The rubrics should always be interpreted in that context.
 
-Merges the training and the test sets to create one data set. Use command rbind to combine training and test set
-Extracts only the measurements on the mean and standard deviation for each measurement. Use grep command to get column indexes for variable name contains "mean()" or "std()"
-Uses descriptive activity names to name the activities in the data set Convert activity labels to characters and add a new column as factor
-Appropriately labels the data set with descriptive variable names. Give the selected descriptive names to variable columns
-From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. Use pipeline command to create a new tidy dataset with command group_by and summarize_each in dplyr package
+As you do your evaluation, please keep an open mind and focus on the positive. The goal is not to deduct points over small deviations from the requirements or for legitimate differences in implementation styles, etc. Look for ways to give points when it's clear that the submitter has given a good faith effort to do the project, and when it's likely that they've succeeded. Most importantly, it's okay if a person did something differently from the way that you did it. The point is not to see if someone managed to match your way of doing things, but to see if someone objectively accomplished the task at hand.
+
+To that end, keep the following things in mind:
+
+DO
+
+Review the source code.
+Keep an open mind and focus on the positive.≤/li>
+When in doubt, err on the side of giving too many points, rather than giving too few.
+Ask yourself if a plot might answer a question for the person who created it.
+Remember that not everyone has the same statistical background and knowledge.
+DON'T:
+
+Deduct just because you disagree with someone's statistical methods.
+Deduct just because you disagree with someone's plotting methods.
+Deduct based on aesthetics.
+Loading the data
+less 
+When loading the dataset into R, please consider the following:
+
+The dataset has 2,075,259 rows and 9 columns. First calculate a rough estimate of how much memory the dataset will require in memory before reading into R. Make sure your computer has enough memory (most modern computers should be fine).
+We will only be using data from the dates 2007-02-01 and 2007-02-02. One alternative is to read the data from just those dates rather than reading in the entire dataset and subsetting to those dates.
+You may find it useful to convert the Date and Time variables to Date/Time classes in R using the \color{red}{\verb|strptime()|}strptime()  and \color{red}{\verb|as.Date()|}as.Date() functions.
+Note that in this dataset missing values are coded as \color{red}{\verb|?|}?.
+Making Plots
+less 
+Our overall goal here is simply to examine how household energy usage varies over a 2-day period in February, 2007. Your task is to reconstruct the following plots below, all of which were constructed using the base plotting system.
+
+First you will need to fork and clone the following GitHub repository: https://github.com/rdpeng/ExData_Plotting1
+
+For each plot you should
+
+Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
+Name each of the plot files as \color{red}{\verb|plot1.png|}plot1.png, \color{red}{\verb|plot2.png|}plot2.png, etc.
+Create a separate R code file (\color{red}{\verb|plot1.R|}plot1.R, \color{red}{\verb|plot2.R|}plot2.R, etc.) that constructs the corresponding plot, i.e. code in \color{red}{\verb|plot1.R|}plot1.R constructs the \color{red}{\verb|plot1.png|}plot1.png plot. Your code file should include code for reading the data so that the plot can be fully reproduced. You must also include the code that creates the PNG file.
+Add the PNG file and R code file to the top-level folder of your git repository (no need for separate sub-folders)
+When you are finished with the assignment, push your git repository to GitHub so that the GitHub version of your repository is up to date. There should be four PNG files and four R code files, a total of eight files in the top-level folder of the repo.
+
